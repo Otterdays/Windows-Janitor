@@ -1,0 +1,17 @@
+[package]
+name = "janitor-cli"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "janitor"
+path = "src/main.rs"
+
+[dependencies]
+janitor-engine = { path = "../janitor-engine" }
+serde_json.workspace = true
+clap = { version = "4.4", features = ["derive"] }
+rayon = "1.8"
+chrono = "0.4"

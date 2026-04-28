@@ -1,0 +1,13 @@
+[package]
+name = "janitor-broker"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "janitor-broker"
+path = "src/main.rs"
+
+[dependencies]
+janitor-engine = { path = "../janitor-engine" }

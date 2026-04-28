@@ -1,0 +1,12 @@
+# Rust
+/target/
+**/*.rs.bk
+
+# Local / secrets
+.env
+.env.*
+.claude/settings.local.json
+
+# OS / IDE (optional noise)
+.DS_Store
+Thumbs.db
