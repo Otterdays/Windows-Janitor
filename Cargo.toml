@@ -7,7 +7,7 @@ version = "0.1.0"
 edition = "2021"
 authors = ["Janitor Contributors"]
 license = "MPL-2.0"
-repository = "https://github.com/your-org/janitor"
+repository = "https://github.com/Otterdays/Windows-Janitor"
 
 [workspace.dependencies]
 thiserror = "1.0"
