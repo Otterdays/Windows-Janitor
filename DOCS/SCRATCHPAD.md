@@ -15,6 +15,7 @@
 1. **2026-04-27:** Appended `PROJECT_LAYOUT.md` amendment (tree vs reality; What's Complete).
 2. **2026-04-27:** Added `DOCS/` workflow files, root `README.md`, `.gitignore`; amended `CHANGELOG.md` / `PROJECT_LAYOUT.md` for Phase 1 accuracy; `git init`.
 3. **2026-04-27:** Verified `cargo test` — 60 tests passed in `janitor-engine`.
+4. **2026-04-27:** Initial git commit `57f3561` on `master` (working tree clean).
 
 ## Next steps (suggested)
 
