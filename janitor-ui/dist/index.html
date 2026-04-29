@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Janitor — Safe PC Cleaner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>🧹 Janitor</h1>
+            <p class="tagline">Safe, transparent Windows cleaner — read-only scan</p>
+        </div>
+        <div class="version" id="version">v0.1</div>
+    </header>
+
+    <main>
+        <section class="controls">
+            <div class="control-group">
+                <label for="scanner-select">Scanner:</label>
+                <select id="scanner-select">
+                    <option value="">All Scanners</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="dev-caches-toggle">
+                    Include developer caches
+                </label>
+            </div>
+            <button id="scan-btn" class="primary">🔍 Run Scan</button>
+        </section>
+
+        <section class="status" id="status">
+            <p>Click <strong>Run Scan</strong> to begin. All scans are read-only.</p>
+        </section>
+
+        <section class="summary" id="summary" hidden>
+            <div class="stat">
+                <div class="stat-label">Findings</div>
+                <div class="stat-value" id="stat-count">0</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Reclaimable</div>
+                <div class="stat-value" id="stat-size">0 MB</div>
+            </div>
+            <div class="stat risk-high">
+                <div class="stat-label">High Risk</div>
+                <div class="stat-value" id="stat-high">0</div>
+            </div>
+            <div class="stat risk-medium">
+                <div class="stat-label">Medium</div>
+                <div class="stat-value" id="stat-medium">0</div>
+            </div>
+            <div class="stat risk-low">
+                <div class="stat-label">Low</div>
+                <div class="stat-value" id="stat-low">0</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Duration</div>
+                <div class="stat-value" id="stat-duration">0 ms</div>
+            </div>
+        </section>
+
+        <section class="filter-bar" id="filter-bar" hidden>
+            <input type="text" id="search-input" placeholder="🔎 Filter by path, scanner, or category...">
+            <select id="risk-filter">
+                <option value="">All risks</option>
+                <option value="high">High only</option>
+                <option value="medium">Medium only</option>
+                <option value="low">Low only</option>
+            </select>
+        </section>
+
+        <section class="results" id="results"></section>
+
+        <section class="errors" id="errors" hidden></section>
+    </main>
+
+    <footer>
+        <p>Phase 1 — read-only. No files modified. <span id="scan-id"></span></p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

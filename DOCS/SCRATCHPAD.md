@@ -12,16 +12,18 @@
 
 ## Last actions (newest first)
 
-1. **2026-04-27:** Pushed `master` to [Otterdays/Windows-Janitor](https://github.com/Otterdays/Windows-Janitor); workspace `repository` URL updated in `Cargo.toml` (`1fae396`).
-2. **2026-04-27:** Appended `PROJECT_LAYOUT.md` amendment (tree vs reality; What's Complete).
-3. **2026-04-27:** Added `DOCS/` workflow files, root `README.md`, `.gitignore`; amended `CHANGELOG.md` / `PROJECT_LAYOUT.md` for Phase 1 accuracy; `git init`.
-4. **2026-04-27:** Verified `cargo test` — 60 tests passed in `janitor-engine`.
-5. **2026-04-27:** Initial git commit `57f3561` on `master` (working tree clean).
+1. **2026-04-27:** Project audit — `cargo test --workspace`, `clippy --workspace`; `DOCS/debugs/debug_2026-04-27_audit.md`; SUMMARY/SBOM/CHANGELOGs + README test count; fixed `janitor-cli` `clippy::print_literal`.
+2. **2026-04-27:** Pushed `master` to [Otterdays/Windows-Janitor](https://github.com/Otterdays/Windows-Janitor); workspace `repository` URL updated in `Cargo.toml` (`1fae396`).
+3. **2026-04-27:** Appended `PROJECT_LAYOUT.md` amendment (tree vs reality; What's Complete).
+4. **2026-04-27:** Added `DOCS/` workflow files, root `README.md`, `.gitignore`; amended `CHANGELOG.md` / `PROJECT_LAYOUT.md` for Phase 1 accuracy; `git init`.
+5. **2026-04-27:** Verified `cargo test` — engine tests (later **64** with `crash_dumps` / `windows_update`).
+6. **2026-04-27:** Initial git commit `57f3561` on `master` (working tree clean).
 
 ## Next steps (suggested)
 
 - **[DONE 2026-04-27]:** `Cargo.toml` `repository` → `https://github.com/Otterdays/Windows-Janitor`
-- Phase 2: broker IPC, rules, persistence, UI (per `ARCHITECTURE.md`).
+- Install **`cargo-audit`** (or CI) and run **`cargo audit`** on each release.
+- Phase 2: broker IPC, rules, persistence, hardened UI IPC (per `ARCHITECTURE.md`).
 
 ## Out-of-Scope Observations
 

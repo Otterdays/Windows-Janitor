@@ -1,10 +1,14 @@
 pub mod browser_cache;
+pub mod crash_dumps;
 pub mod recycle_bin;
 pub mod temp_dirs;
+pub mod windows_update;
 
 pub use browser_cache::BrowserCacheScanner;
+pub use crash_dumps::CrashDumpScanner;
 pub use recycle_bin::RecycleBinScanner;
 pub use temp_dirs::TempDirScanner;
+pub use windows_update::WindowsUpdateScanner;
 
 use crate::Scanner;
 
@@ -14,6 +18,8 @@ pub fn all_scanners() -> Vec<Box<dyn Scanner>> {
         Box::new(TempDirScanner),
         Box::new(RecycleBinScanner),
         Box::new(BrowserCacheScanner),
+        Box::new(CrashDumpScanner),
+        Box::new(WindowsUpdateScanner),
     ]
 }
 
@@ -23,7 +29,7 @@ mod tests {
 
     #[test]
     fn all_scanners_returns_expected_count() {
-        assert_eq!(all_scanners().len(), 3);
+        assert_eq!(all_scanners().len(), 5);
     }
 
     #[test]
@@ -51,6 +57,8 @@ mod tests {
         assert!(ids.contains(&"temp_dirs"));
         assert!(ids.contains(&"recycle_bin"));
         assert!(ids.contains(&"browser_cache"));
+        assert!(ids.contains(&"crash_dumps"));
+        assert!(ids.contains(&"windows_update"));
     }
 
     #[test]

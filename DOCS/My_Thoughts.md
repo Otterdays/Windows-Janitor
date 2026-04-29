@@ -2,6 +2,10 @@
 
 # My_Thoughts
 
+## 2026-04-27 — Audit cadence
+
+- **`cargo-audit`:** SBOM/advisory tracking should assume `cargo audit` (or CI equivalent) before shipping; documented in `DOCS/SBOM.md` and `DOCS/debugs/debug_2026-04-27_audit.md` because the tool was missing on the audit workstation.
+
 ## 2026-04-27 — DOCS layout
 
 - **Decision:** Introduced `DOCS/` for agent workflow (`SUMMARY`, `SBOM`, `SCRATCHPAD`, `STYLE_GUIDE`, `My_Thoughts`, lightweight `CHANGELOG` / `ARCHITECTURE` pointers) while keeping canonical technical narrative in repo-root `FOUNDATION.md`, `ARCHITECTURE.md`, and `CHANGELOG.md`.

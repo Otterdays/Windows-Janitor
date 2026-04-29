@@ -1,6 +1,6 @@
 # Janitor Project Layout
 
-_Last updated: 2026-04-27 (Phase 1 complete)_
+_Last updated: 2026-04-27 (Phase 1 enhanced)_
 
 > **[AMENDED 2026-04-27]:** The ASCII tree still labels `scanners/`, `janitor-cli`, and `janitor-broker` as `[TODO]` / “no src yet”; those sources **exist** (Phase 1 scan + CLI; broker stub). Prefer `DOCS/SUMMARY.md` and this file’s checklist below over the tree markers for those paths.
 
@@ -19,13 +19,14 @@ janitor/                              # Workspace root
 │       ├── models.rs             ✓   # Finding, ScanResult, ScanContext, Category, RiskLevel, TargetKind
 │       ├── scanner.rs            ✓   # Scanner trait
 │       ├── blacklist.rs          ✓   # Safety boundary (never-touch paths)
-│       ├── scanners/             [TODO] Scanner implementations
-│       │   ├── mod.rs
-│       │   ├── temp_dirs.rs           # First scanner (Phase 1)
-│       │   ├── recycle_bin.rs         # Phase 1
-│       │   ├── browser_cache.rs       # Phase 1
-│       │   ├── windows_update.rs      # Phase 2
-│       │   └── ...
+│       ├── scanners/             ✓   Scanner implementations (5 total)
+│       │   ├── mod.rs                ✓
+│       │   ├── temp_dirs.rs          ✓   Temp directory scanner
+│       │   ├── recycle_bin.rs        ✓   Recycle Bin analysis
+│       │   ├── browser_cache.rs      ✓   Browser cache (Chrome, Edge, Firefox, Brave, Opera)
+│       │   ├── crash_dumps.rs        ✓   .dmp and .log files
+│       │   ├── windows_update.rs     ✓   Windows Update leftovers
+│       │   └── (Phase 2: more scanners)
 │       ├── rules/                [TODO] Rule engine (Phase 2)
 │       │   ├── mod.rs
 │       │   ├── parser.rs              # TOML → rule struct
@@ -50,10 +51,18 @@ janitor/                              # Workspace root
 │   └── src/
 │       └── main.rs                    # Basic CLI + JSON/HTML report generation
 │
-└── janitor-ui/                   [TODO Phase 2] Tauri frontend
-    ├── Cargo.toml
+└── janitor-ui/                   ✓   Tauri 2 desktop UI
+    ├── Cargo.toml                ✓
+    ├── build.rs                  ✓
+    ├── tauri.conf.json           ✓
+    ├── icons/
+    │   └── icon.ico              ✓   32x32 placeholder (replace for production)
+    ├── dist/                     ✓   Vanilla HTML/CSS/JS frontend
+    │   ├── index.html            ✓   App shell
+    │   ├── style.css             ✓   Dark theme
+    │   └── app.js                ✓   Tauri IPC calls, live filter, table render
     └── src/
-        └── main.rs
+        └── main.rs               ✓   Tauri commands: list_scanners, run_scan, engine_version
 ```
 
 ## Crate Dependencies
@@ -78,7 +87,7 @@ janitor-engine
 - [x] Scanner trait (interface every scanner implements)
 - [x] Hard blacklist module (safety enforcer)
 - [x] Error types
-- [x] **[AMENDED 2026-04-27]:** Built-in scanners (`temp_dirs`, `recycle_bin`, `browser_cache`) and `janitor-cli` (`scan`, `list`); `janitor-broker` binary stub
+- [x] **[AMENDED 2026-04-27 v2]:** 5 scanners (`temp_dirs`, `recycle_bin`, `browser_cache`, `crash_dumps`, `windows_update`), `janitor-cli` with JSON/HTML export + filtering, `launch.bat` menu, 35+ tests
 
 ## What's Next [TODO]
 

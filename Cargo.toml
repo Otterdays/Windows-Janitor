@@ -1,5 +1,5 @@
 [workspace]
-members = ["janitor-engine", "janitor-cli", "janitor-broker"]
+members = ["janitor-engine", "janitor-cli", "janitor-broker", "janitor-ui"]
 resolver = "2"
 
 [workspace.package]

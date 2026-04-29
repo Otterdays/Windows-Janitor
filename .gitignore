@@ -1,12 +1,32 @@
 # Rust
 /target/
+Cargo.lock
 **/*.rs.bk
 
-# Local / secrets
-.env
-.env.*
-.claude/settings.local.json
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# OS / IDE (optional noise)
+# OS
 .DS_Store
 Thumbs.db
+
+# Local config (secrets, env vars)
+.claude/settings.local.json
+.env.local
+.env
+
+# Build artifacts
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.pdb
+
+# Debug
+.gdb_history
